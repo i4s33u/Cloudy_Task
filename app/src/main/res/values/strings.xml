@@ -2,4 +2,9 @@
     <string name="app_name">Firebase RecyclerView</string>
     <string name="task_title">Task Title</string>
     <string name="task_detail">Task Details</string>
+
+    <string name="add_title">Task title:</string>
+    <string name="add_details">Descriptions</string>
+
+    <string name="button_create">Create</string>
 </resources>

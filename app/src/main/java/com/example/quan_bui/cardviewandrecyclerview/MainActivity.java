@@ -1,5 +1,7 @@
 package com.example.quan_bui.cardviewandrecyclerview;
 
+import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,6 +24,8 @@ public class MainActivity
     FirebaseRecyclerAdapter<Task, TaskViewHolder> mFirebaseAdapter;
     TextView tvTitle;
     TextView tvDetails;
+
+    private FloatingActionButton fabAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +56,14 @@ public class MainActivity
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         rvList.setLayoutManager(layoutManager);
 
+        fabAdd = (FloatingActionButton) findViewById(R.id.fabAdd);
+        fabAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddNewTaskActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
