@@ -23,9 +23,6 @@ public class MainActivity
     TextView tvTitle;
     TextView tvDetails;
 
-    //define SwipeLayout instance
-    SwipeLayout swipeLayout;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,47 +51,6 @@ public class MainActivity
         rvList.setAdapter(mFirebaseAdapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         rvList.setLayoutManager(layoutManager);
-
-        //setup swipeLayout
-        swipeLayout = (SwipeLayout) findViewById(R.id.swipe);
-
-        //set show mode
-        swipeLayout.setShowMode(SwipeLayout.ShowMode.LayDown);
-
-        //add drag edge
-        swipeLayout.addDrag(SwipeLayout.DragEdge.Left, findViewById(R.id.bottom_wrapper));
-
-        swipeLayout.addSwipeListener(new SwipeLayout.SwipeListener() {
-            @Override
-            public void onStartOpen(SwipeLayout layout) {
-
-            }
-
-            @Override
-            public void onOpen(SwipeLayout layout) {
-                //when the BottomView totally show
-            }
-
-            @Override
-            public void onStartClose(SwipeLayout layout) {
-
-            }
-
-            @Override
-            public void onClose(SwipeLayout layout) {
-                //when the SurfaceView totally cover the BottomView
-            }
-
-            @Override
-            public void onUpdate(SwipeLayout layout, int leftOffset, int topOffset) {
-                //you are swiping
-            }
-
-            @Override
-            public void onHandRelease(SwipeLayout layout, float xvel, float yvel) {
-                //when user's hands released
-            }
-        });
 
     }
 
