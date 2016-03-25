@@ -8,8 +8,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.ui.FirebaseRecyclerAdapter;
 
@@ -52,6 +56,22 @@ public class MainActivity
         rvList.setAdapter(mFirebaseAdapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         rvList.setLayoutManager(layoutManager);
+
+        rvList.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(),
+                                                                    new RecyclerItemClickListener.OnItemClickListener() {
+                                                                        @Override
+                                                                        public void onItemClick(View view,
+                                                                                                int position) {
+                                                                            // do whatever
+                                                                            Toast.makeText(
+                                                                                getApplicationContext(),
+                                                                                "Clicked on item #"
+                                                                                    + String.valueOf(
+                                                                                    position),
+                                                                                Toast.LENGTH_SHORT)
+                                                                                .show();
+                                                                        }
+                                                                    }));
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
