@@ -8,8 +8,10 @@
                                     android:orientation="vertical"
                                     card_view:cardCornerRadius="5dp">
 
-    <com.daimajia.swipe.SwipeLayout android:layout_width="match_parent"
-                                    android:layout_height="100dp">
+    <com.daimajia.swipe.SwipeLayout
+        android:id="@+id/swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <!-- Bottom View Start-->
         <LinearLayout
