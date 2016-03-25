@@ -2,18 +2,16 @@ package com.example.quan_bui.cardviewandrecyclerview;
 
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
-import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.ui.FirebaseRecyclerAdapter;
 
@@ -63,13 +61,8 @@ public class MainActivity
                                                                         public void onItemClick(View view,
                                                                                                 int position) {
                                                                             // do whatever
-                                                                            Toast.makeText(
-                                                                                getApplicationContext(),
-                                                                                "Clicked on item #"
-                                                                                    + String.valueOf(
-                                                                                    position),
-                                                                                Toast.LENGTH_SHORT)
-                                                                                .show();
+                                                                            Log.e("Item touched",
+                                                                                  "Touched");
                                                                         }
                                                                     }));
 
