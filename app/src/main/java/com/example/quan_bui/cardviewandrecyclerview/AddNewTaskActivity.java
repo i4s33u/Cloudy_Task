@@ -1,5 +1,6 @@
 package com.example.quan_bui.cardviewandrecyclerview;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,6 +34,10 @@ public class AddNewTaskActivity
                 Task newTask =
                     new Task(edtTitle.getText().toString(), edtDetails.getText().toString());
                 mFirebaseRef.push().setValue(newTask);
+
+                Intent intent = new Intent(AddNewTaskActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
         });
     }

@@ -15,15 +15,11 @@ import com.firebase.client.ValueEventListener;
 public class TaskViewHolder
     extends RecyclerView.ViewHolder {
 
-    Firebase mRef;
     TextView tvTitle;
     TextView tvDetails;
 
     public TaskViewHolder(View itemView) {
         super(itemView);
-
-        Firebase.setAndroidContext(itemView.getContext());
-        mRef = new Firebase("https://cloud-note.firebaseio.com");
 
         tvTitle = (TextView) itemView.findViewById(R.id.tvTitle);
         tvDetails = (TextView) itemView.findViewById(R.id.tvDetails);
