@@ -55,16 +55,16 @@ public class MainActivity
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         rvList.setLayoutManager(layoutManager);
 
-        rvList.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(),
-                                                                    new RecyclerItemClickListener.OnItemClickListener() {
-                                                                        @Override
-                                                                        public void onItemClick(View view,
-                                                                                                int position) {
-                                                                            // do whatever
-                                                                            Log.e("Item touched",
-                                                                                  "Touched");
-                                                                        }
-                                                                    }));
+        //rvList.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(),
+        //                                                            new RecyclerItemClickListener.OnItemClickListener() {
+        //                                                                @Override
+        //                                                                public void onItemClick(View view,
+        //                                                                                        int position) {
+        //                                                                    // do whatever
+        //                                                                    Log.e("Item touched",
+        //                                                                          "Touched");
+        //                                                                }
+        //                                                            }));
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
